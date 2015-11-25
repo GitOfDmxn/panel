@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="script.js"></script>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #main{
+               margin:50px auto;
+               width:1000px;
+               border:1px solid #585252;
+               height:900px;
+            }
+            #left-menu{
+              width:300px;
+              height:898px;
+              border:1px solid #FCFA12;
+              margin:0;
+              padding:0;
+              float: left;
+            }
+            #left-content{
+              width:690px;
+              height:898px;
+              border:1px solid #FCFA12;
+              margin-left:6px;
+              float: left;
+              position: relative;
+            }
+            .ListTitle{
+                padding: 10px 20px;
+                background-color: #CBCBCB;
+                font-size: 1.5em;
+                color: #3A3939;
+            }
+            .menuList div{
+               padding: 5px 20px;
+            }
+            .menuList div:hover{
+               background-color: #1C61B7;
+               color: #fff;
+            }
+            .menuList a{
+              text-decoration: none;
+              color: #000;
+            }
+            .menuList a:hover{
+              color: #fff;
+            }
+            #panel1,#panel2,#panel3,#panel4{
+                position: absolute;
+                top:20px;
+                left: 30px;
+                width: 300px;
+                height: 300px;
+                border: 1px solid red;
+                display: none;
+                z-index: 2;
+                background-color: #fff;
+            }
+            #tol{
+              width: 100%;
+              height: 30px;
+              background-color: #0D08F9;
+              line-height: 30px;
+              text-align: right;
+            }
+            .close-ico{
+              color: #fff;
+              font-size: 2em;
+              padding-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+      <div id="main">
+         <div id="left-menu">
+      <div class="menu">
+        <div class="menuParent">
+          <div class="ListTitlePanel">
+            <div class="ListTitle">
+              <strong>企业信息</strong>
+            </div>
+          </div>
+          <div class="menuList">
+            <div> <a href="#" id="contact">企业介绍</a></div>
+            <div> <a href="#">企业联系人 </a> </div>
+          </div>
+        </div>
+        <div class="menuParent">
+          <div class="ListTitlePanel">
+            <div class="ListTitle">
+              <strong>企业认证</strong>
+            </div>
+          </div>
+          <div class="menuList">
+            <div> <a href="#">企业认证</a></div>
+            <div> <a href="#">保证金</a></div>
+          </div>
+        </div>
+        <div class="menuParent">
+          <div class="ListTitlePanel">
+            <div class="ListTitle">
+              <strong>账号管理</strong>
+            </div>
+          </div>
+          <div class="menuList">
+            <div> <a href="#">账号信息</a></div>
+            <div> <a href="#">角色权限设置</a></div>
+            <div> <a href="#">子账号管理</a></div>
+          </div>
+        </div>
+        <div class="menuParent">
+          <div class="ListTitlePanel">
+            <div class="ListTitle">
+              <strong>账号安全</strong>
+            </div>
+          </div>
+          <div class="menuList">
+            <div> <a href="#">密保问题</a></div>
+            <div> <a href="#">修改密码</a></div>
+          </div>
+        </div>
+        <div class="menuParent">
+          <div class="ListTitlePanel">
+            <div class="ListTitle">
+              <strong>发票管理</strong>
+            </div>
+          </div>
+          <div class="menuList">
+            <div> <a href="#" onclick="addBill();">发票信息</a></div>
+          </div>
+        </div>
+        <div class="menuParent">
+          <div class="ListTitlePanel">
+            <div class="ListTitle">
+              <strong>地址管理</strong>
+            </div>
+          </div>
+          <div class="menuList">
+              <div><a href="#" onclick="addAddress();">新增地址信息</a></div>
+            <div><a href="#">修改地址信息</a></div>
+          </div>
+        </div>
+      </div>
+      </div>
+         <div id="left-content">
+            <div id="panel1">
+              <div id = "tol">
+                <span id="close-ico">×</span>
+              </div>
+              线程将挂起7秒!   <此刻主线程将被挂起，挂起之后，就会寻找状态为就绪的线程（thread1）执行>
+我是Thread子类的线程实例。<执行thread1>
+我将被挂起10秒。<线程thread1将被挂起>
+回到主线程，请稍等，刚才主线程挂起可能还没有醒来。<线程thread1将被挂起后会回到主线程，但是由于主线程被挂起7秒                                               ，状态可能还没有就变为就绪>
+又回到了主线程!    <7秒后主线程醒来，开始执行>
+thread1休眠过长,主线程杀掉了thread1!<thread1被挂起10秒,还没有醒来。被主线程stop>
+主线程又将挂起7秒!<此刻主线程将
+            </div>
+            <div id="panel2"></div>
+            <div id="panel3"></div>
+            <div id="panel4"></div>
+我是主线程。
+主线程将挂起7秒!   <此刻主线程将被挂起，挂起之后，就会寻找状态为就绪的线程（thread1）执行>
+我是Thread子类的线程实例。<执行thread1>
+我将被挂起10秒。<线程thread1将被挂起>
+回到主线程，请稍等，刚才主线程挂起可能还没有醒来。<线程thread1将被挂起后会回到主线程，但是由于主线程被挂起7秒                                               ，状态可能还没有就变为就绪>
+又回到了主线程!    <7秒后主线程醒来，开始执行>
+thread1休眠过长,主线程杀掉了thread1!<thread1被挂起10秒,还没有醒来。被主线程stop>
+主线程又将挂起7秒!<此刻主线程将被挂起，挂起之后，就会寻找状态为就绪的线程（thread2）执行>
+我是Thread类的线程实例并以实现了Runnable接口的类为参数!<执行thread2>
+我将挂起1秒!<线程thread2将被挂起>
+回到主线程,请稍等,刚才主线程挂起可能还没醒过来！<线程thread2将被挂起后会回到主线程，但是由于主线程被挂起7秒                                               ，主线程可能还没有醒来，状态可能还没有就变为就绪>
+回到thread2,主线程还处于挂起间段  <线程thread2在被挂起1秒由于主线程还处于挂起状态，在线程thread2挂起结束后，                                  又醒来之后，继续执行thread2的内容>
+又回到了主线程! <7秒后主线程醒来，开始执行>
+主线程没发现thread2,thread2已醒顺序执行结束了!<由于thread2只被挂起1秒，在主线程醒来后，thread2 线程已经顺序执                                            行完毕，线程将自动结束,而不会被主线程杀掉>
+         </div>
+      </div>
+    </body>
+</html>
